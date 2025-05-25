@@ -1,4 +1,4 @@
-# **Revisiting Rule-Based Indonesian Sub-word Separation for Enhanced LLM Performance and Low-Resource NLP**
+# **Enhancing Indonesian NLP: Rule-Based Morphological Segmentation with ModernKataKupas for LLMs and Low-Resource Settings**
 
 ## **Chapter 1: Introduction**
 
