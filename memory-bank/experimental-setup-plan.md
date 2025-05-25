@@ -64,7 +64,7 @@ This document outlines the detailed plan for the experimental setup to address t
   1. **Baseline:** Use the LLM's default, built-in sub-word tokenizer.  
   2. **ModernKataKupas \+ Basic Tokenizer:**  
      * Pre-process text with ModernKataKupas.  
-     * Join the morphemic segments with a special separator (e.g., whitespace or a unique token like \</seg\>).  
+     * Join the morphemic segments with a special separator (e.g., whitespace or a unique token like `</seg>`).  
      * Train a new basic tokenizer (e.g., WordPiece or BPE with a vocabulary built from ModernKataKupas segments) on the ModernKataKupas-processed training data for each task, or use a shared one. Alternatively, treat each ModernKataKupas segment as a "word" and use a simple whitespace tokenizer if the LLM can handle a larger effective vocabulary. This needs careful consideration for LLM input.  
      * *Alternative for LLMs with flexible input:* If the LLM allows feeding pre-tokenized text, feed ModernKataKupas segments directly.  
 * **Methodology:**  

@@ -55,10 +55,16 @@ This document outlines the key writing rules and guidelines to be followed durin
 * **Critical Review:** Critically review and edit all AI-generated text. Verify facts, ensure coherence, and adapt the text to your voice and the paper's style.  
 * **Plagiarism:** Ensure all content is original or properly attributed. AI-generated text must be thoroughly checked and rephrased to avoid plagiarism.
 
+* **5.x Clarification on AI Assistant (Gemini) Role:**
+    * The AI assistant (Gemini) is intended to function primarily as a **collaborative partner and reviewer**.
+    * **User's Responsibility:** The user (Anda) will be responsible for providing specific initial prompts, referring to relevant documents (e.g., "Based on `paper-implementation-plan.md` Step 1.1, and `key-literature.md` for Sneddon (1996) and Alwi et al. (2003), draft the initial 2 paragraphs for Section 1.1 - Background and Motivation, focusing on Indonesian as an agglutinative language and its implications for NLP.").
+    * **AI's Role:** Gemini will then generate draft content based on these prompts and the provided documents. Gemini can also assist in refining prompts, suggesting structure, brainstorming ideas, and reviewing drafted content for clarity, coherence, and consistency with other documents.
+    * **Final Authority:** The user retains final responsibility for all content, including accuracy, originality, and adherence to academic standards, by critically reviewing and editing all AI-generated text.
+
 ## **6\. Document Updates and Versioning**
 
-* **Updating paper-progress.md:** After completing a significant section or step outlined in paper-implementation-plan.md, update paper-progress.md.  
-* **Updating paper-architecture.md:** After a major section is drafted and reviewed, add a summary and its role/justification to paper-architecture.md.  
+* **Updating `paper-progress.md`:** After completing each **individual 'Step X.Y'** as outlined in `paper-implementation-plan.md` (e.g., after completing Step 1.1, or Step 2.3), update `paper-progress.md`. The update should mark this specific step as 'Complete' and can include brief notes or links to the drafted content if stored separately.
+* **Updating `paper-architecture.md`:** After a **major thematic section or sub-chapter (e.g., Section 1.1: Background and Motivation; Section 2.2: Stemming and Morphological Analysis for Indonesian; or potentially an entire chapter like 'Chapter 1: Introduction' once its initial draft is complete and has undergone a first review)** is drafted and reviewed, add a summary of that section to `paper-architecture.md`. This summary should briefly state its core message/purpose, its contribution to the overall paper narrative, and its current status (e.g., 'First Draft Complete', 'Reviewed, Revisions Pending', 'Finalized for this Stage').
 * **Git Commits:** Commit changes frequently to the Git repository with clear, descriptive commit messages.
 
 These rules are intended to be a guide. Flexibility is allowed where it improves the overall quality and clarity of the paper, but deviations should be conscious decisions.

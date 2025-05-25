@@ -19,6 +19,13 @@ This document provides a step-by-step plan for drafting the research paper "Enha
 * **Progress Tracking:** After completing each major step or section, update paper-progress.md and paper-architecture.md as per writing-rules.md.  
 * **Iterative Process:** This plan is a guide. Revisions and adjustments are expected.
 
+**0.1. Alur Kerja Terintegrasi: Kode dan Paper**
+
+*   Implementasi kode ModernKataKupas akan berjalan secara iteratif dan sebagian paralel dengan penulisan paper. Bab 3 (Metodologi) akan didasarkan pada desain awal algoritma, kemudian akan disempurnakan setelah komponen inti ModernKataKupas (v0.1) berhasil diimplementasikan dan lulus pengujian unit awal.
+*   Penulisan Bab 4 (Experimental Setup) dan Bab 5 (Results and Discussion) sangat bergantung pada hasil eksperimen, yang mana memerlukan versi ModernKataKupas yang fungsional dan stabil (v1.0).
+*   **Milestone Kode C1:** Implementasi inti algoritma ModernKataKupas (normalisasi, penanganan reduplikasi dasar, identifikasi kata dasar, dan mekanisme dasar pemisahan afiks) selesai dan terdokumentasi. *Kaitan Paper: Memungkinkan finalisasi draf detail untuk sebagian besar Bab 3.*
+*   **Milestone Kode C2:** Skrip untuk menjalankan eksperimen terkait RQ1 (Vocabulary & OOV Reduction) telah dikembangkan dan diuji dengan data sampel. *Kaitan Paper: Memungkinkan pelaksanaan eksperimen untuk RQ1 dan persiapan awal untuk Bagian 5.1.*
+
 ## **1\. Chapter 1: Introduction**
 
 **Objective:** To provide background, state the problem, define research questions, list contributions, and outline the paper structure. (Refer to paper-design-document.md Section 1, 4, 5).
@@ -160,7 +167,56 @@ This document provides a step-by-step plan for drafting the research paper "Enha
 
 **Next Steps (High-Level for subsequent Chapters):**
 
-* **Chapter 4: Experimental Setup:** Detail datasets, baselines, models, metrics, and MKK implementation specifics as per experimental-setup-plan.md.  
-* **Chapter 5: Results and Discussion:** Structure sections for each RQ. Plan to present quantitative results in tables/figures and follow with qualitative discussion, error analysis, and implications.  
+* **Chapter 4: Experimental Setup**
+    **Objective:** To detail datasets, baselines, models, metrics, and MKK implementation specifics as per experimental-setup-plan.md.
+
+    * **Step 4.1: Draft Section 4.1 - Datasets**
+        * **Task:** Describe the specific datasets chosen for each research question (RQ1: vocabulary analysis, RQ2: downstream tasks, RQ4: NMT). Include details on source, size, splits (train/dev/test), and any pre-processing steps applied. Reference `experimental-setup-plan.md`.
+        * **Key Points:** Justification for dataset selection, statistics of datasets.
+        * **Validation:** [ ] Are all datasets clearly described and sources cited? [ ] Is pre-processing explained?
+
+    * **Step 4.2: Draft Section 4.2 - Baseline Tokenizers**
+        * **Task:** Detail the baseline tokenization methods (BPE, WordPiece, per-word). Specify implementation details (e.g., library used, training parameters, vocabulary size). Reference `experimental-setup-plan.md`.
+        * **Validation:** [ ] Are baselines clearly defined and reproducible?
+
+    * **Step 4.3: Draft Section 4.3 - Pre-trained LLMs**
+        * **Task:** Specify the pre-trained LLMs that will be used for RQ2. Detail model versions and any specific fine-tuning setups. Reference `experimental-setup-plan.md`.
+        * **Validation:** [ ] Are LLM choices and versions clear?
+
+    * **Step 4.4: Draft Section 4.4 - NMT Models**
+        * **Task:** Describe the NMT model architecture and training setup for RQ4. Reference `experimental-setup-plan.md`.
+        * **Validation:** [ ] Is the NMT setup clearly defined?
+
+    * **Step 4.5: Draft Section 4.5 - Evaluation Metrics**
+        * **Task:** List and define all evaluation metrics that will be used for each RQ (e.g., PPL, BLEU, F1-score for specific tasks, OOV rate). Reference `experimental-setup-plan.md`.
+        * **Validation:** [ ] Are all metrics clearly defined and justified for each RQ?
+
+    * **Step 4.6: Draft Section 4.6 - ModernKataKupas Implementation Details**
+        * **Task:** Briefly describe the specific version/configuration of ModernKataKupas used for the experiments. Note any key parameters or variations from the description in Chapter 3.
+        * **Validation:** [ ] Is the MKK version used in experiments clear?
+
+* **Chapter 5: Results and Discussion**
+    **Objective:** Structure sections for each RQ. Plan to present quantitative results in tables/figures and follow with qualitative discussion, error analysis, and implications.
+
+    * **Step 5.1: Structure Section 5.1 - RQ1: Vocabulary and OOV Rate Analysis**
+        * **Task:** Outline the structure for presenting results for RQ1. Plan specific tables (e.g., Table 5.1.1: Vocabulary Size Comparison; Table 5.1.2: OOV Rate Comparison) and figures (e.g., Figure 5.1.1: OOV Rate vs. Corpus Size). List key discussion points to address, such as statistical significance and comparison against hypotheses. *Note: This section will be populated with actual data post-experimentation.*
+        * **Validation:** [ ] Is there a clear plan for presenting RQ1 results and discussion points?
+
+    * **Step 5.2: Structure Section 5.2 - RQ2: LLM Downstream Task Performance**
+        * **Task:** Outline the structure for presenting results for RQ2. Plan tables/figures for each downstream task, comparing ModernKataKupas (standalone or hybrid) with baselines. List key discussion points, including performance differences, statistical significance, and potential reasons for observed outcomes. *Note: This section will be populated with actual data post-experimentation.*
+        * **Validation:** [ ] Is there a clear plan for presenting RQ2 results and discussion points?
+
+    * **Step 5.3: Structure Section 5.3 - RQ3: Qualitative Analysis and Interpretability**
+        * **Task:** Outline the structure for presenting results for RQ3. Plan for qualitative examples comparing segmentations (ModernKataKupas vs. BPE/SentencePiece). Discuss interpretability and consistency. *Note: This section will be populated with actual data post-experimentation.*
+        * **Validation:** [ ] Is there a clear plan for presenting RQ3 results and discussion points?
+
+    * **Step 5.4: Structure Section 5.4 - RQ4: NMT Performance**
+        * **Task:** Outline the structure for presenting results for RQ4. Plan tables for BLEU scores and other relevant NMT metrics. Discuss performance in low-resource/domain-specific scenarios. *Note: This section will be populated with actual data post-experimentation.*
+        * **Validation:** [ ] Is there a clear plan for presenting RQ4 results and discussion points?
+
+    * **Step 5.5: Overall Discussion and Error Analysis**
+        * **Task:** Plan a sub-section for a general discussion of findings across all RQs. Include common themes, limitations, and a detailed error analysis of ModernKataKupas based on experimental results.
+        * **Validation:** [ ] Is there a plan for an overall discussion and error analysis?
+
 * **Chapter 6: Conclusion and Future Work:** Summarize findings, directly answer RQs, discuss limitations, and propose future research directions.  
 * **Abstract & References:** Draft/Refine Abstract. Ensure all citations in bibliography.bib are complete and correctly formatted.

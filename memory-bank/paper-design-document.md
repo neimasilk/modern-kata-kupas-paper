@@ -105,7 +105,7 @@ This section will be developed in more detail in experimental-setup-plan.md. Bas
 * **For RQ2 (Downstream Tasks):**  
   * **Dataset:** Several standard benchmark datasets for Indonesian NLP (e.g., from IndoNLU, IndoLEM) for tasks like text classification (e.g., sentiment, topic), NER, QA.  
   * **Model:** Pre-trained Indonesian LLMs (e.g., IndoBERT, IndoBART, GPT variants).  
-  * **Method:** Fine-tune LLMs on each task using input processed with (a) the LLM's default tokenizer, (b) ModernKataKupas \+ a basic tokenizer (e.g., vocabulary from ModernKataKupas morphemes).  
+  * **Method:** Fine-tune LLMs on each task using input processed with (a) the LLM's default tokenizer, (b) ModernKataKupas + a basic tokenizer (e.g., vocabulary from ModernKataKupas morphemes).  
   * **Metrics:** Standard metrics per task (Accuracy, F1-score, Exact Match, etc.).  
 * **For RQ3 (Interpretability):**  
   * **Method:** Qualitative analysis of segmentation examples. Possibly involve human surveys (if feasible) to assess morpheme clarity. Case study analysis where ModernKataKupas helps models handle complex or rare words.  
